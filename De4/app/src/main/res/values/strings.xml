@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">De4</string>
+    <string-array name="left">
+        <item>VND</item>
+        <item>USD</item>
+        <item>EUR</item>
+        <item>AUD</item>
+    </string-array>
+    <string-array name="right">
+        <item>VND</item>
+        <item>USD</item>
+        <item>EUR</item>
+        <item>AUD</item>
+    </string-array>
+</resources>
