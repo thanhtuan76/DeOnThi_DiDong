@@ -71,16 +71,7 @@
                         android:layout_margin="10dp"
                         android:text="Số lượng" />
 
-                    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-                        android:id="@+id/txt_amount"
-                        android:layout_width="80dp"
-                        android:layout_height="30dp"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        app:backGroundColor="@android:color/darker_gray"
-                        app:finalNumber="9"
-                        app:initialNumber="1"
-                        app:textColor="@android:color/black" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -174,17 +165,7 @@
                         android:layout_margin="10dp"
                         android:text="Số lượng" />
 
-                    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-                        android:id="@+id/txt_amount2"
-                        android:layout_width="80dp"
-                        android:layout_height="10dp"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:background="#ffffff"
-                        app:backGroundColor="@android:color/darker_gray"
-                        app:finalNumber="9"
-                        app:initialNumber="1"
-                        app:textColor="@android:color/black" />
+
                 </LinearLayout>
             </LinearLayout>
 
@@ -241,17 +222,7 @@
                         android:layout_margin="10dp"
                         android:text="Số lượng" />
 
-                    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-                        android:id="@+id/txt_amount3"
-                        android:layout_width="80dp"
-                        android:layout_height="10dp"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:background="#ffffff"
-                        app:backGroundColor="@android:color/darker_gray"
-                        app:finalNumber="9"
-                        app:initialNumber="1"
-                        app:textColor="@android:color/black" />
+                    
                 </LinearLayout>
             </LinearLayout>
 

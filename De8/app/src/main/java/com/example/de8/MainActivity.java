@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 double sal = Double.parseDouble(salary.getText().toString());
                 int peop = Integer.parseInt(people.getText().toString());
                 double res = 0;
+                double tax = 0;
                 if (Integer.parseInt(month.getSelectedItem().toString()) < 7
                         && Double.parseDouble(String.valueOf(year.getSelectedItemPosition())) < 2020) {
 //                    if (Double.parseDouble(String.valueOf(year.getSelectedItemPosition())) < 2020) {
@@ -41,22 +42,81 @@ public class MainActivity extends AppCompatActivity {
 
                     if (res <= 0)
                         txtSalaryTax.setText("Thu nhập quá thấp, không cần nộp thuế TNCN!!!");
-                    else if (res <= 5 * Math.pow(10, 6)){
+                    else if (res <= 5 * Math.pow(10, 6)) {
+                        tax = res * 5 / 100;
                         txtSalaryTax.setText(new DecimalFormat("###,###,###.###").format(res) + " Đ");
+                        txtTaxValue.setText(new DecimalFormat("###,###,###.###").format(tax) + " Đ");
+                    } else if (res >= 5 * Math.pow(10, 6) && res <= 10 * Math.pow(10, 6)) {
+                        tax = 0.25 * Math.pow(10, 6) + res * 5 / 100;
+                        txtSalaryTax.setText(new DecimalFormat("###,###,###.###").format(res) + " Đ");
+                        txtTaxValue.setText(new DecimalFormat("###,###,###.###").format(tax) + " Đ");
+                    } else if (res > 10 * Math.pow(10, 6) && res <= 18 * Math.pow(10, 6)) {
+                        tax = 0.75 * Math.pow(10, 6) + res * 15 / 100;
+                        txtSalaryTax.setText(new DecimalFormat("###,###,###.###").format(res) + " Đ");
+                        txtTaxValue.setText(new DecimalFormat("###,###,###.###").format(tax) + " Đ");
+                    } else if (res > 18 * Math.pow(10, 6) && res <= 32 * Math.pow(10, 6)) {
+                        tax = 1.95 * Math.pow(10, 6) + res * 20 / 100;
+                        txtSalaryTax.setText(new DecimalFormat("###,###,###.###").format(res) + " Đ");
+                        txtTaxValue.setText(new DecimalFormat("###,###,###.###").format(tax) + " Đ");
+                    } else if (res > 32 * Math.pow(10, 6) && res <= 52 * Math.pow(10, 6)) {
+                        tax = 4.75 * Math.pow(10, 6) + res * 25 / 100;
+                        txtSalaryTax.setText(new DecimalFormat("###,###,###.###").format(res) + " Đ");
+                        txtTaxValue.setText(new DecimalFormat("###,###,###.###").format(tax) + " Đ");
+                    } else if (res > 52 * Math.pow(10, 6) && res <= 80 * Math.pow(10, 6)) {
+                        tax = 9.75 * Math.pow(10, 6) + res * 30 / 100;
+                        txtSalaryTax.setText(new DecimalFormat("###,###,###.###").format(res) + " Đ");
+                        txtTaxValue.setText(new DecimalFormat("###,###,###.###").format(tax) + " Đ");
+                    } else if (res > 80 * Math.pow(10, 6)) {
+                        tax = 18.15 * Math.pow(10, 6) + res * 35 / 100;
+                        txtSalaryTax.setText(new DecimalFormat("###,###,###.###").format(res) + " Đ");
+                        txtTaxValue.setText(new DecimalFormat("###,###,###.###").format(tax) + " Đ");
                     }
-                }
+                } else {
+                    if (Double.parseDouble(String.valueOf(year.getSelectedItemPosition())) >= 2020) {
+                        res = sal - 11 * Math.pow(10, 6) - (peop * 4.4 * Math.pow(10, 6)) * 1.0;
+                        if (res <= 0)
+                            txtSalaryTax.setText("Thu nhập quá thấp, không cần nộp thuế TNCN!!!");
+                        else if (res <= 5 * Math.pow(10, 6)){
+                            tax = res * 5/100;
+                            txtSalaryTax.setText(new DecimalFormat("###,###,###.###").format(res) + " Đ");
+                            txtTaxValue.setText(new DecimalFormat("###,###,###.###").format(tax) + " Đ");
+                        }
+                        else if (res >= 5 * Math.pow(10, 6) && res <= 10 * Math.pow(10, 6)){
+                            tax = 0.25 * Math.pow(10, 6) + res * 5/100;
+                            txtSalaryTax.setText(new DecimalFormat("###,###,###.###").format(res) + " Đ");
+                            txtTaxValue.setText(new DecimalFormat("###,###,###.###").format(tax) + " Đ");
+                        }
+                        else if (res > 10 * Math.pow(10, 6) && res <= 18 * Math.pow(10, 6)){
+                            tax = 0.75 * Math.pow(10, 6) + res * 15/100;
+                            txtSalaryTax.setText(new DecimalFormat("###,###,###.###").format(res) + " Đ");
+                            txtTaxValue.setText(new DecimalFormat("###,###,###.###").format(tax) + " Đ");
+                        }
+                        else if (res > 18 * Math.pow(10, 6) && res <= 32 * Math.pow(10, 6) ){
+                            tax = 1.95 * Math.pow(10, 6) + res * 20/100;
+                            txtSalaryTax.setText(new DecimalFormat("###,###,###.###").format(res) + " Đ");
+                            txtTaxValue.setText(new DecimalFormat("###,###,###.###").format(tax) + " Đ");
+                        }
+                        else if (res > 32 * Math.pow(10, 6) && res <= 52 * Math.pow(10, 6) ){
+                            tax = 4.75 * Math.pow(10, 6) + res * 25/100;
+                            txtSalaryTax.setText(new DecimalFormat("###,###,###.###").format(res) + " Đ");
+                            txtTaxValue.setText(new DecimalFormat("###,###,###.###").format(tax) + " Đ");
+                        }
+                        else if (res > 52 * Math.pow(10, 6) && res <= 80 * Math.pow(10, 6) ){
+                            tax = 9.75 * Math.pow(10, 6) + res * 30/100;
+                            txtSalaryTax.setText(new DecimalFormat("###,###,###.###").format(res) + " Đ");
+                            txtTaxValue.setText(new DecimalFormat("###,###,###.###").format(tax) + " Đ");
+                        }
+                        else if (res > 80 * Math.pow(10, 6) ){
+                            tax = 18.15 * Math.pow(10, 6) + res * 35/100;
+                            txtSalaryTax.setText(new DecimalFormat("###,###,###.###").format(res) + " Đ");
+                            txtTaxValue.setText(new DecimalFormat("###,###,###.###").format(tax) + " Đ");
+                        }
+                    }
 
-                else{
-//                    if (Double.parseDouble(String.valueOf(year.getSelectedItemPosition())) >= 2020) {
-                res = sal - 11 * Math.pow(10, 6) - (peop * 4.4 * Math.pow(10, 6)) * 1.0;
-                if (res <= 0)
-                    txtSalaryTax.setText("Thu nhập quá thấp, không cần nộp thuế TNCN!!!");
-                else
-                    txtSalaryTax.setText(new DecimalFormat("###,###,###.###").format(res) + " Đ");
+                }
             }
-        }
-    });
-}
+        });
+    }
 
     public void Initial() {
         salary = findViewById(R.id.salary);

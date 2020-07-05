@@ -129,7 +129,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -143,7 +144,7 @@
                 android:id="@+id/salaryTax"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="21.000.000"
+                android:text="..."
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -154,7 +155,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -168,7 +170,7 @@
                 android:id="@+id/taxValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1.500.000"
+                android:text="..."
                 android:textColor="#000"
                 android:textSize="20dp" />
         </LinearLayout>
